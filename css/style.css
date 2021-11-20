@@ -1,0 +1,221 @@
+/* sets up box sizing by changing how padding is calculated (things are within a width, rather than adding to a width)*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom properties */
+:root {
+    /* font family primary */
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    /* font weight */
+    --ff-reg: 300;
+    --ff-bold: 900;
+
+    /* colors */
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #16e0bd;
+
+    /* font size */
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h1: 1.25rem;
+    --fs-body: 1rem;
+    
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,0.15);
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* General Styles*/
+
+body {
+    /* note that this uses the color defined in :root */
+
+    /* light mode */
+    background: var(--clr-light);
+    color: var(--clr-dark);
+
+    margin: 0;
+
+    /* sets the fonts */
+    font-family: var(--ff-primary);
+    font-size: var(--ff-body);
+    line-height: 1.6;
+
+}
+
+/* padding on the edges of the screen so things don't touch the sides of the screen */
+section {
+    padding: 5em 2em;
+}
+
+img {
+
+    /* displays standalone images in block form; fixes issues that may arise */
+    display: block;
+    /* makes it so that images don't become bigger than the parent element */
+    max-width: 100%;
+}
+
+strong {
+    font-weight: var(--ff-bold);
+}
+
+/* typography */
+
+h1,
+h2,
+h3 {
+    /* subject to whatever looks good */
+    line-height: 1;
+    margin: 0;
+}
+
+/* sets font sizes for headers */
+h1 { 
+    font-size: var(--fs-h1)
+}
+h2 {
+    font-size: var(--fs-h2)
+}
+h3 {
+    font-size: var(--fs-h3)
+}
+
+/* section titles */
+
+.section__title {
+    margin-left: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.section__title--intro {
+    font-weight: var(--ff-reg);
+}
+
+.section__title--intro strong {
+    /* strings encapsulated in the strong tag will always be on their on block */
+    display: block;
+}
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: var(--clr-accent);
+    padding: 0.25em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+
+/* turns off the navigation while we figure things out */
+nav {
+    display: none;
+}
+
+/* introduction section */
+
+.intro {
+    position: relative;
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+.section__subtitle--intro {
+    display: inline-block;
+}
+
+/* changes media at about 600px when things get too big*/
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    } 
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.25em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+/* Classwork Section */
+
+.classwork {
+    background-color: var(--clr-dark);
+    /* background-image: url(...); */
+    /* background-blend-mode: multiply; */
+    background-size: cover;
+    color: var(--clr-light);
+
+    text-align: center;
+}
+
+/* center the classwork */
+.section__title--classwork {
+    color: var(--clr-accent);
+    position: relative;
+}
+
+/* line underneath the classwork */
+.section__title--classwork::after {
+    content: '';
+    display: block;
+    width: 25%;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.4;
+}
+
+.classwork {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+    .classwork {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .classwork + .classwork {
+        margin-left: 2em;
+    }
+}

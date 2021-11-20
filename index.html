@@ -1,11 +1,133 @@
 <!DOCTYPE html>
 
-<html>
-    <title>My Portfolio</title> <!--title for my page (appears in the top bar)-->
+<html lang="en">
 
-    <body>
-        <h1>Index</h1>
-        <p>Hello World, my name is Justin Hoang</p>
-        <p>I am currently live editing this from Vim using Bracey.</p>
-    </body>
+   <head>
+        <!--standard to set unicode character set-->
+        <meta charset="UTF-8">
+        <!--viewport supports webpage viewing from moblie devices, big or small devices, etc.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Title at the top of the page-->
+        <title>Justin Portfolio Website</title>
+
+        <!--CSS file to 'normalize' differences between web browsers (chrome, firefox, etc.)-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <!--Imports fonts from Font Awesome for social buttons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog54gvNhfrOj+BmwXdxFgvK/Kvc=" crossorigin="anonymous" />
+
+        <!--font that FCC used-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap">
+
+        <!--linked to css file-->
+        <link rel="stylesheet" href="css/style.css">
+   </head> 
+    
+   <body>
+       <!--the header at the top of the page-->
+       <header>
+        
+            <!--image flag at the top of the page-->
+            <div class="logo">
+                My header
+                <!-- <img src="img/carnations.jpg" alt="pink carnations"> -->
+            </div>
+
+            <!--button for-->
+            <button class="nav-toggle" aria-label="toggle navigation">
+                 <span class="hamburger"></span>
+            </button>
+            
+            <!--the navigation element-->
+            <nav class="nav">
+                <!--the nav__list is a subcomponent of the navigation class-->
+                <!--contains all of the navigation tab items that we are working with-->
+                <ul class="nav__list">
+                    <!--home is linked-->
+                    <li class="nav__item"><a href="#home" class="nav__link"> Home </a></li>
+                    <li class="nav__item"><a href="#classwork" class="nav__link"> Classwork </a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link"> About Me </a></li>
+                    <li class="nav__item"><a href="#" class="nav__link"> My Projects </a></li>
+                </ul>
+            </nav>
+
+       </header>
+
+       <!--Introduction-->
+       <section class="intro" id="home">
+           <!--this section title inherits from the general section title class-->
+           <h1 class="section__title section__title--intro">
+               Hi, I am <strong>Justin Hoang</strong>
+           </h1>
+           <p class="section__subtitle section__subtitle--intro">CS@Mines Student</p>
+           <img src="img/cs@mines.png" alt="cs@mines logo" class="intro__img">
+       </section>
+
+       <!--Classwork-->
+       <section class="classwork" id="classwork">
+            <!--section title for classwork-->
+            <h2 class="section__title section__title--classwork">Classwork</h2>
+            <div class="classwork">
+                <h3>class 1</h3>
+                <p>blah sfkasdfasdfasdfasdfasdf I'm going to take CSCI343</p> <!--class-->
+
+                <h3>class 2</h3>
+                <p>something some thing</p> <!--class-->
+
+                <h3>class 3</h3>
+                <p>here is somethign else for class 3</p> <!--class-->
+
+            </div> <!--end classes-->
+
+            <!-- <a href="#classes" class="btn">Classwork</a> -->
+       </section>
+
+       <!--About me-->
+        <section class="about-me" id="about">
+            <!--section title for about me-->
+            <h2 class="section__title section__title--about">
+                Who am I?
+            </h2>
+            <!--Subtitle (note that smaller headings for subtitles are looking frowned upon, as they should be used to further divide sections)-->
+            <p class="section__subtitle section__subtitle--about">
+            </p>
+
+            <!--the body subsection of the about-me-->
+            <div class="about-me__body"></div>
+
+            <!--image of myself-->
+            <!-- <img src="" alt=""> -->
+        </section>
+
+        <!--My Projects-->
+        <section class="my-projects" id="project">
+            <h2 class="section__title">My Projects</h2>
+            <p></p>
+
+            <div class="portfolio">
+                <a href="#" class="portfolio__item">
+                    <!--images of the portfolio item-->
+                    <!-- <img src="" alt=""> -->
+                </a>
+
+                <a href="#" class="portfolio__item">
+                    <!--images of the portfolio item-->
+                    <!-- <img src="" alt=""> -->
+                </a>
+
+                <a href="#" class="portfolio__item">
+                    <!--images of the portfolio item-->
+                    <!-- <img src="" alt=""> -->
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <a href="mailto:justinhoang@mines.edu" class="footer-link">justinhoang@mines.edu</a>
+            <ul class="social-list">
+                <li class="social-list__item"><a class="social-list__link" href="https://github.com/suasuasuasuasua">GitHub</a></li>
+            </ul>
+
+        </footer>
+   </body>
 </html>
