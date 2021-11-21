@@ -48,6 +48,10 @@ body {
     background: var(--clr-light);
     color: var(--clr-dark);
 
+    /* dark mode
+    background: var(--clr-dark);
+    color: var(--clr-light); */
+
     margin: 0;
 
     /* sets the fonts */
@@ -210,12 +214,13 @@ nav {
 
 @media (min-width: 800px) {
     .classwork {
-        display: flex;
+        /* TODO figure out why flex isn't working */
+        /* display: flex; */
         max-width: 1000px;
         margin: 0 auto;
     }
 
-    .classwork + .classwork {
+    /* .course + .course {
         margin-left: 2em;
-    }
+    } */
 }
