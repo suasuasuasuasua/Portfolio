@@ -136,12 +136,12 @@ h3 {
     margin-bottom: 0.25em;
 }
 
-.section__title--intro {
+.section__title-intro {
     font-weight: var(--ff-reg);
 }
 
 /* strings encapsulated in the strong tag will always be on their on block */
-.section__title--intro strong {
+.section__title-intro strong {
     display: block;
 }
 
@@ -150,8 +150,8 @@ h3 {
     font-size: var(--fs-h3);
 }
 
-.section__subtitle--intro,
-.section__subtitle--about {
+.section__subtitle-intro,
+.section__subtitle-about {
     background: var(--clr-accent);
     padding: 0.25em;
     font-family: var(--ff-secondary);
@@ -177,7 +177,7 @@ nav {
 }
 
 /* displays the introduction accent on it's own line */
-.section__subtitle--intro {
+.section__subtitle-intro {
     display: inline-block;
 }
 
@@ -203,14 +203,15 @@ nav {
     }
 
     /* arranges the accent line */
-    .section__subtitle--intro {
+    .section__subtitle-intro {
         align-self: start;
 
         grid-column: -1 / 1;
-
         grid-row: 2;
+
         text-align: right;
         position: relative;
+
         left: -1.25em;
         width: calc(100% + 1.5em);
     }
@@ -219,13 +220,13 @@ nav {
 /* Classwork Section */
 
 /* center the classwork */
-.section__title--classwork {
+.section__title-classwork {
     color: var(--clr-accent);
     position: relative;
 }
 
 /* line underneath the classwork */
-.section__title--classwork::after {
+.section__title-classwork::after {
     content: '';
     display: block;
     width: 25%;
@@ -284,10 +285,93 @@ nav {
     margin: 0 auto;
 }
 
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
 /* when the screen size is large enough, then split the paragraphs, and set a max size for the image */
 @media (min-width: 600px) {
     .about-me {
         display: grid;
         grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        column-gap: 2em;
     }
+
+    /* groups the title and subtitle to follow the grid template areas defined above */
+    .section__titleabout,
+    .section__subtitle-about {
+        grid-area: title;
+    }
+
+    /* puts the subtitle underneath the image */
+    .section__subtitle-about {
+        grid-column: -1 / 1;
+        grid-row: 2;
+
+        /* very similar to what we did above */
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        
+        /* sets it up so that the text can never get close to the image */
+        padding-left: 1em;
+        padding-right: calc(200px + 4em);
+    }
+
+    /* makes the image follow the grid template area defined above */
+    /* makes the image layer on top of everything else */
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/* my project section */
+
+.my-projects {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__subtitle-projects {
+    color: var(--clr-accent);
+    font-weight: var(--ff-bold);
+    margin-bottom: 2em;
+}
+
+/* for each picture, draw its own column*/
+.portfolio {
+    display: grid;
+    /* automatically scales the number of pictures */
+    /* grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); */
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* hover effect */
+
+.portfolio__item {
+    background-color: var(--clr-accent);
+    overflow: hidden;
+}
+
+.portfolio__img {
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
+                opacity 250ms linear;
+}
+
+.portfolio__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio__img:hover,
+.portfolio__item:focus .portfolio__img {
+    transform: scale(1.2);
+    opacity: 0.70;
 }

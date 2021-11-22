@@ -56,18 +56,18 @@
        <!--Introduction-->
        <section class="intro" id="home">
            <!--this section title inherits from the general section title class-->
-           <h1 class="section__title section__title--intro">
+           <h1 class="section__title section__title-intro">
                Hi, I am <strong>Justin Hoang</strong>
            </h1>
            <!--stuff to include in the green text-->
-           <p class="section__subtitle section__subtitle--intro">CS@Mines Student</p>
+           <p class="section__subtitle section__subtitle-intro">CS@Mines Student</p>
            <img src="img/cs@mines.png" alt="cs@mines logo" class="intro__img">
        </section>
 
        <!--Classwork-->
        <section class="classwork" id="classwork">
             <!--section title for classwork-->
-            <h2 class="section__title section__title--classwork">Current Classes</h2>
+            <h2 class="section__title section__title-classwork">Current Classes</h2>
 
             <!--Contains all current courses-->
             <div class="current-courses">
@@ -109,13 +109,13 @@
        </section>
 
        <!--About me-->
-        <section course="about-me" id="about">
+        <section class="about-me" id="about">
             <!--section title for about me-->
-            <h2 course="section__title section__title--about">
+            <h2 class="section__title section__title-about">
                 Who am I?
             </h2>
             <!--Subtitle (note that smaller headings for subtitles are looking frowned upon, as they should be used to further divide sections)-->
-            <p class="section__subtitle section__subtitle--about">
+            <p class="section__subtitle section__subtitle-about">
                 Undergraduate CS @ Colorado School of Mines
             </p>
 
@@ -124,45 +124,75 @@
                <p>
                     My name is Justin and I like to go to the gym and code.
                </p> 
-               <p>
+               <!-- <p>
                    I also like to read, play video games, and play instruments like the piano.
                </p>
                <p>
-                   I wish I had more time to do those things, what with school and all, but I've been trying to explore those passions in a healthy way.
-               </p>
+                   I wish I had more time to do those things, what with school and all, so I've been trying to explore those passions in a healthy way by balancing this with school, family, and friends.
+               </p> -->
             </div>
 
             <!--image of myself-->
-            <!-- <img src="" alt=""> -->
+            <img src="img/cs@mines.png" alt="" class="about-me__img">
         </section>
 
         <!--My Projects-->
         <section class="my-projects" id="project">
-            <h2 class="section__title">My Projects</h2>
-            <p></p>
+            <h2 class="section__title-projects">My Projects</h2>
+            <p class="section__subtitle-projects">A Selection</p>
 
             <div class="portfolio">
                 <a href="#" class="portfolio__item">
                     <!--images of the portfolio item-->
-                    <!-- <img src="" alt=""> -->
+                    <img src="img/cs@mines.png" alt="" class="portfolio__img">
                 </a>
 
                 <a href="#" class="portfolio__item">
                     <!--images of the portfolio item-->
-                    <!-- <img src="" alt=""> -->
+                    <img src="img/cs@mines.png" alt="" class="portfolio__img">
                 </a>
 
                 <a href="#" class="portfolio__item">
                     <!--images of the portfolio item-->
-                    <!-- <img src="" alt=""> -->
+                    <img src="img/cs@mines.png" alt="" class="portfolio__img">
                 </a>
+
+                <a href="#" class="portfolio__item">
+                    <!--images of the portfolio item-->
+                    <img src="img/cs@mines.png" alt="" class="portfolio__img">
+                </a>
+
+                <a href="#" class="portfolio__item">
+                    <!--images of the portfolio item-->
+                    <img src="img/cs@mines.png" alt="" class="portfolio__img">
+                </a>
+
+                <a href="#" class="portfolio__item">
+                    <!--images of the portfolio item-->
+                    <img src="img/cs@mines.png" alt="" class="portfolio__img">
+                </a>
+
             </div>
         </section>
+        <i class="fas fa-camera"></i> <!-- solid style -->
+        <i class="far fa-camera"></i> <!-- regular style -->
+        <i class="fal fa-camera"></i> <!-- light style -->
+        <i class="fad fa-camera"></i> <!-- duotone style -->
 
         <footer>
             <a href="mailto:justinhoang@mines.edu" class="footer-link">justinhoang@mines.edu</a>
             <ul class="social-list">
-                <li class="social-list__item"><a class="social-list__link" href="https://github.com/suasuasuasuasua">GitHub</a></li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/suasuasuasuasua">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.goodreads.com/user/show/94077403-justino-hoang">
+                        <i class="fab fa-goodreads"></i>
+                    </a>
+                </li>
             </ul>
 
         </footer>
