@@ -66,6 +66,7 @@ section {
     padding: 5em 2em;
 }
 
+/* formatting for images */
 img {
 
     /* displays standalone images in block form; fixes issues that may arise */
@@ -74,8 +75,37 @@ img {
     max-width: 100%;
 }
 
+/* sets weight for strings with the strong tag */
 strong {
     font-weight: var(--ff-bold);
+}
+
+/* when focuses (like links are clicked on), box them with the accent color to grab attention */
+:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+/* styling for buttons */
+.btn {
+    display: inline-block;
+    padding: .5em 2em;
+    background-color: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--ff-bold);
+
+    transition: transform 200ms ease-in-out;
+}
+
+/* when the button is hovered over, make it larger */
+.btn:hover {
+    transform: scale(1.2);
 }
 
 /* typography */
@@ -110,8 +140,8 @@ h3 {
     font-weight: var(--ff-reg);
 }
 
+/* strings encapsulated in the strong tag will always be on their on block */
 .section__title--intro strong {
-    /* strings encapsulated in the strong tag will always be on their on block */
     display: block;
 }
 
@@ -138,28 +168,33 @@ nav {
 
 .intro {
     position: relative;
+    margin: auto;
 }
 
+/* adds shadows to the introduction image */
 .intro__img {
     box-shadow: var(--bs);
 }
 
+/* displays the introduction accent on it's own line */
 .section__subtitle--intro {
     display: inline-block;
 }
 
-/* changes media at about 600px when things get too big*/
+/* changes media for the introduction elements at the top when the webpage viewer is larger */
 @media (min-width: 600px) {
+
     .intro {
         display: grid;
         width: min-content;
         margin: 0 auto;
         grid-template-areas: 
-            "img title"
+            "img title" 
             "img subtitle";
         grid-template-columns: min-content max-content;
     } 
 
+    /* formats the picture so that it's not too big and so that it's in the right spot */
     .intro__img {
         grid-area: img;
         min-width: 250px;
@@ -167,9 +202,12 @@ nav {
         z-index: 2;
     }
 
+    /* arranges the accent line */
     .section__subtitle--intro {
         align-self: start;
+
         grid-column: -1 / 1;
+
         grid-row: 2;
         text-align: right;
         position: relative;
@@ -179,16 +217,6 @@ nav {
 }
 
 /* Classwork Section */
-
-.classwork {
-    background-color: var(--clr-dark);
-    /* background-image: url(...); */
-    /* background-blend-mode: multiply; */
-    background-size: cover;
-    color: var(--clr-light);
-
-    text-align: center;
-}
 
 /* center the classwork */
 .section__title--classwork {
@@ -207,20 +235,59 @@ nav {
     opacity: 0.4;
 }
 
+/* set the background the classwork section */
 .classwork {
+    background-color: var(--clr-dark);
+    background-size: cover;
+
+    /* optional URL */
+    /* background-image: url(...); */
+    /* background-blend-mode: multiply; */
+
+    color: var(--clr-light);
+    text-align: center;
+}
+
+/* sets margin for the course sections to define sections */
+.current-courses {
+    margin-bottom: 3em;
+}
+
+/* give each course a dynamic amount of room */
+.course {
     max-width: 500px;
     margin: 0 auto;
 }
 
+/* when the page is big enough, then arrange courses side by side with flex */
 @media (min-width: 800px) {
-    .classwork {
-        /* TODO figure out why flex isn't working */
-        /* display: flex; */
+
+    /* aligns the courses */
+    .current-courses {
+        display: flex;
         max-width: 1000px;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* .course + .course {
-        margin-left: 2em;
-    } */
+    /* if there are sibling courses next to each other, then give them a margin */
+    .course + .course {
+        margin-left: 1em;
+    }
+}
+
+/* about me section */
+
+/* general preferences for about me elements */
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* when the screen size is large enough, then split the paragraphs, and set a max size for the image */
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+    }
 }
