@@ -14,7 +14,7 @@
         <!--CSS file to 'normalize' differences between web browsers (chrome, firefox, etc.)-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
         <!--Imports fonts from Font Awesome for social buttons-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog54gvNhfrOj+BmwXdxFgvK/Kvc=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 
         <!--font that FCC used-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap">
@@ -29,8 +29,7 @@
         
             <!--image flag at the top of the page-->
             <div class="logo">
-                My header
-                <!-- <img src="img/carnations.jpg" alt="pink carnations"> -->
+                <img src="img/carnations.jpg" alt="pink carnations">
             </div>
 
             <!--button for-->
@@ -47,7 +46,7 @@
                     <li class="nav__item"><a href="#home" class="nav__link"> Home </a></li>
                     <li class="nav__item"><a href="#classwork" class="nav__link"> Classwork </a></li>
                     <li class="nav__item"><a href="#about" class="nav__link"> About Me </a></li>
-                    <li class="nav__item"><a href="#" class="nav__link"> My Projects </a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link"> My Projects </a></li>
                 </ul>
             </nav>
 
@@ -104,7 +103,7 @@
                 </div>
             </div>
 
-        <a href="#classwork" class="btn">Current Classes</a>
+            <a href="#classwork" class="btn">Current Classes</a>
 
        </section>
 
@@ -137,7 +136,7 @@
         </section>
 
         <!--My Projects-->
-        <section class="my-projects" id="project">
+        <section class="my-projects" id="projects">
             <h2 class="section__title-projects">My Projects</h2>
             <p class="section__subtitle-projects">A Selection</p>
 
@@ -174,13 +173,16 @@
 
             </div>
         </section>
-        <i class="fas fa-camera"></i> <!-- solid style -->
-        <i class="far fa-camera"></i> <!-- regular style -->
-        <i class="fal fa-camera"></i> <!-- light style -->
-        <i class="fad fa-camera"></i> <!-- duotone style -->
 
-        <footer>
-            <a href="mailto:justinhoang@mines.edu" class="footer-link">justinhoang@mines.edu</a>
+        <!-- button to return to the top -->
+        <p href="#home" class="btn__return">
+            <a href="#home" class="btn">
+                Return to the Top
+            </a>
+        </p>
+
+        <footer class="footer">
+            <a href="mailto:justinhoang@mines.edu" class="footer__link">justinhoang@mines.edu</a>
             <ul class="social-list">
                 <li class="social-list__item">
                     <a class="social-list__link" href="https://github.com/suasuasuasuasua">
@@ -189,12 +191,29 @@
                 </li>
 
                 <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/justin-hoang-7b98471ba/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://open.spotify.com/user/12135014263">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                </li>
+
+                <li class="social-list__item">
                     <a class="social-list__link" href="https://www.goodreads.com/user/show/94077403-justino-hoang">
                         <i class="fab fa-goodreads"></i>
                     </a>
                 </li>
+
             </ul>
 
         </footer>
+
+        <!-- js -->
+        <script src="js/index.js"></script>
    </body>
 </html>
